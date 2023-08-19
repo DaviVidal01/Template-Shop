@@ -1,0 +1,35 @@
+{% load static %}
+<header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../">TemplateShop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../"><img src="{% static 'assets/img/loja.png' %}" alt="Loja" width="32px" height="32px"></a>
+            </li>
+            <ul class="navbar-nav flex-grow-1 justify-content-between">
+                <li class="nav-item"><a class="nav-link" href="#produtos">Produtos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="#suporte">Suporte</a></li>
+                <li class="nav-item"><a class="nav-link" href="../produtos">Preços</a></li>
+                <li class="nav-item"><a class="nav-link" href="../carrinho">
+                  <img src="{% static 'assets/img/carrinho.png' %}" alt="carrinho">
+                </a></li>
+            </ul>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Pesquise Produtos" aria-label="Search">
+            <button class="btn btn-outline-success me-4" type="submit">Pesquisar</button>
+          </form>
+          <div class="text-end">
+            <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Entrar</button>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Registrar</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+</header>
