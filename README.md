@@ -20,7 +20,7 @@
 
    ```sh
    git clone https://github.com/DaviVidal01/Template-Shop.git
-   cd desenvolvimento-web-DaviVidal01.git
+   cd Template-Shop.git
    ```
 2. Crie um ambiente virtual:
 
