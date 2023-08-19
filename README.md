@@ -19,7 +19,7 @@
 1. Clone este repositório:
 
    ```sh
-   git clone 
+   git clone https://github.com/DaviVidal01/Template-Shop.git
    cd desenvolvimento-web-DaviVidal01.git
    ```
 2. Crie um ambiente virtual:
