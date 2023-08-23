@@ -126,7 +126,7 @@
       </div>
       <!--Informação-->
       <div class="container marketing">
-        <hr class="featurette-divider">
+        <h2 class="pb-2 border-bottom" style="margin-top: 20px;">Sobre nossa loja</h2>
         <div class="row featurette mt-5">
           <div class="col-md-7 mt-5">
             <h2 class="featurette-heading fw-normal lh-1 mt-5">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
@@ -136,10 +136,10 @@
             <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="{% static 'assets/img/loja.png' %}">
           </div>
         </div>
-        <hr class="featurette-divider">
       </div>
       <!--Produtos Promocionais-->
-      <div class="container pt-3">
+      <div class="container pt-4">
+        <h2 class="pb-2 border-bottom">Produtos Promocionais</h2>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
@@ -148,8 +148,8 @@
                   <div class="card">
                     <img src="{% static 'assets/img/camisaestampa.png' %}" class="card-img-top" alt="..." >
                     <div class="card-body">
-                      <h5 class="card-title">Camisa Estampada - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                      <p class="card-text">Roupa branca com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
+                      <h5 class="card-title">Camisa Estampa - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
+                      <p class="card-text">Roupa com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
                       <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
                     </div>
                   </div>
@@ -178,8 +178,8 @@
                   <div class="card">
                     <img src="{% static 'assets/img/camisaazul.png' %}" class="card-img-top" alt="..." >
                     <div class="card-body">
-                      <h5 class="card-title">Camisa Estampada - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                      <p class="card-text">Roupa branca com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
+                      <h5 class="card-title">Camisa Azul - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
+                      <p class="card-text">Roupa azul com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
                       <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
                     </div>
                   </div>
@@ -192,8 +192,8 @@
                   <div class="card">
                     <img src="{% static 'assets/img/camisaestampa.png' %}" class="card-img-top" alt="..." >
                     <div class="card-body">
-                      <h5 class="card-title">Camisa Estampada - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                      <p class="card-text">Roupa branca com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
+                      <h5 class="card-title">Camisa Estampa - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
+                      <p class="card-text">Roupa com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
                       <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
                     </div>
                   </div>
@@ -222,8 +222,8 @@
                   <div class="card">
                     <img src="{% static 'assets/img/camisaazul.png' %}" class="card-img-top" alt="..." >
                     <div class="card-body">
-                      <h5 class="card-title">Camisa Estampada - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                      <p class="card-text">Roupa branca com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
+                      <h5 class="card-title">Camisa Azul - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
+                      <p class="card-text">Roupa azul com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
                       <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
                     </div>
                   </div>
@@ -242,44 +242,86 @@
         </div>
       </div>
       <!--Depoimentos-->
-      <h1 class="text-bg-dark" style="text-align:center;">Depoimentos de Clientes</h1>
-      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="3000">
-            <div class="row m-5 p-3">
-              <div class="col-sm-6">
-                <div class="card mt-3">
-                  <div class="card-body">
-                    <h5 class="card-title">Mauro Guimarães</h5>
-                    <p class="card-text">Já recomendei os produtos da WheyShop a Vários amigos que me pedem dicas de treino. Os produtos com melhor custo beneficio que já usei e a melhor parte está no sabor... eles Capricham nisso.</p>
-                    <footer class="blockquote-footer"><cite>23/02/2023</cite></footer>
+      <div class="container pt-4">
+        <h2 class="pb-2 border-bottom">Depoimentos de Clientes</h2>
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+              <div class="row m-5 p-3">
+                <div class="col-sm-6">
+                  <div class="card mt-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Mauro Guimarães</h5>
+                      <p class="card-text">Já recomendei os produtos da TemplateShop para parentes e amigos. Os produtos com melhor custo beneficio que já usei</p>
+                      <footer class="blockquote-footer"><cite>23/02/2023</cite></footer>
+                    </div>
+                 </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card mt-3">
+                    <div class="card-body">
+                     <h5 class="card-title">Nathan Richard</h5>
+                     <p class="card-text">Os produtos são excelentes, o site é fácil de navegar e a entrega é rastreável e chega antes do prazo.</p>
+                     <footer class="blockquote-footer"><cite>03/03/2023</cite></footer>
+                    </div>
                   </div>
-               </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card mt-3">
-                  <div class="card-body">
-                   <h5 class="card-title">Nathan Richard</h5>
-                   <p class="card-text">Os produtos são excelentes, o site é fácil de navegar e a entrega é rastreável e chega antes do prazo.</p>
-                   <footer class="blockquote-footer"><cite>03/03/2023</cite></footer>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card mt-3">
+                    <div class="card-body">
+                     <h5 class="card-title">Laura Santos</h5>
+                     <p class="card-text">Eu amo a TemplateShop, sempre muito rápido o serviço e em poucos dias já recebo o produto na minha casa! Recomendo sempre!</p>
+                     <footer class="blockquote-footer"><cite>29/02/2023</cite></footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card mt-3">
+                    <div class="card-body">
+                     <h5 class="card-title">Ryan Paulo</h5>
+                     <p class="card-text">Não posso falar muito pois sou iniciante no site, mas já vi que é muito bom.</p>
+                     <footer class="blockquote-footer"><cite>01/04/2023</cite></footer>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-6">
-                <div class="card mt-3">
-                  <div class="card-body">
-                   <h5 class="card-title">Laura Santos</h5>
-                   <p class="card-text">Eu amo a WheyShop, sempre muito rápido o serviço e em poucos dias já recebo o produto na minha casa! Recomendo sempre!</p>
-                   <footer class="blockquote-footer"><cite>29/02/2023</cite></footer>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+              <div class="row m-5 p-3">
+                <div class="col-sm-6">
+                  <div class="card mt-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Mauro Guimarães</h5>
+                      <p class="card-text">Já recomendei os produtos da TemplateShop para parentes e amigos. Os produtos com melhor custo beneficio que já usei</p>
+                      <footer class="blockquote-footer"><cite>23/02/2023</cite></footer>
+                    </div>
+                 </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card mt-3">
+                    <div class="card-body">
+                     <h5 class="card-title">Nathan Richard</h5>
+                     <p class="card-text">Os produtos são excelentes, o site é fácil de navegar e a entrega é rastreável e chega antes do prazo.</p>
+                     <footer class="blockquote-footer"><cite>03/03/2023</cite></footer>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card mt-3">
-                  <div class="card-body">
-                   <h5 class="card-title">Ryan Paulo</h5>
-                   <p class="card-text">não posso falar muito pois sou iniciante no site, mas já vi que é muito bom.</p>
-                   <footer class="blockquote-footer"><cite>01/04/2023</cite></footer>
+                <div class="col-sm-6">
+                  <div class="card mt-3">
+                    <div class="card-body">
+                     <h5 class="card-title">Laura Santos</h5>
+                     <p class="card-text">Eu amo a TemplateShop, sempre muito rápido o serviço e em poucos dias já recebo o produto na minha casa! Recomendo sempre!</p>
+                     <footer class="blockquote-footer"><cite>29/02/2023</cite></footer>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card mt-3">
+                    <div class="card-body">
+                     <h5 class="card-title">Ryan Paulo</h5>
+                     <p class="card-text">Não posso falar muito pois sou iniciante no site, mas já vi que é muito bom.</p>
+                     <footer class="blockquote-footer"><cite>01/04/2023</cite></footer>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -288,7 +330,72 @@
         </div>
       </div>
       <!--Equipe-->
-      <!--Feedback/Contatos-->
+      <div class="container pt-4">
+        <h2 class="pb-2 border-bottom">Contato e Equipe</h2>
+        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+          <div class="col d-flex flex-column align-items-start gap-2">
+            <h2 class="fw-bold text-body-emphasis">Envie seu Feedback para a nossa equipe</h2>
+            <p class="text-body-secondary">Vamos estar analisando sugestões para as próximas atualizações do site.</p>
+            <div class="p-4 text-dark me-5">
+              <div class="mb-3 me-5">
+                <label for="exampleFormControlInput1" class="form-label">Endereço de Email</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+              <div class="me-5">
+                <label for="exampleFormControlTextarea1" class="form-label">Sugestão</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              <div>
+                <button type="button" class="m-2 btn btn-primary">Enviar Feedback</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row row-cols-1 row-cols-sm-2 g-4">
+              <div class="col d-flex flex-column gap-2">
+                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                  <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#collection"></use>
+                  </svg>
+                </div>
+                <h4 class="fw-semibold mb-0 text-body-emphasis"></h4>
+                <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+              </div>
+    
+              <div class="col d-flex flex-column gap-2">
+                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                  <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#gear-fill"></use>
+                  </svg>
+                </div>
+                <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
+                <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+              </div>
+    
+              <div class="col d-flex flex-column gap-2">
+                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                  <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#speedometer"></use>
+                  </svg>
+                </div>
+                <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
+                <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+              </div>
+    
+              <div class="col d-flex flex-column gap-2">
+                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                  <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#table"></use>
+                  </svg>
+                </div>
+                <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
+                <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b-example-divider text-bg-dark" style="opacity: 50%;"><hr></div>
     </main>
     <!--Footer-->
     {% include 'partials/footer.html' %}
