@@ -85,32 +85,32 @@
           </div>
           <div class="carousel-inner" style="background-color: black;">
             <div class="carousel-item">
-              <img class="bd-placeholder-img d-block w-100" src="{% static 'assets/img/váriascamisas.jpg' %}" style="opacity: 65%;" height="600px" alt="váriascamisas">
+              <img class="bd-placeholder-img d-block w-100" src="{{ carousel.0.carrossel.url }}" style="opacity: 65%;" height="600px" alt="váriascamisas">
               <div class="container">
                 <div class="carousel-caption text-start">
-                  <h1>Promoções Imperdíveis</h1>
-                  <p class="opacity-75">Você pode resgatar cupons ou encontrar promoções para realizar suas compras com descontos incríveis!</p>
-                  <p><a class="btn btn-lg btn-primary" href="../produtos">Ver Promoções</a></p>
+                  <h1>{{carousel.0.title}}</h1>
+                  <p class="opacity-75">{{carousel.0.description}}</p>
+                  <p><a class="btn btn-lg btn-primary" href="../produtos">{{carousel.0.buttom}}</a></p>
                 </div>
               </div>
             </div>
             <div class="carousel-item">
-              <img class="bd-placeholder-img d-block w-100" src="{% static 'assets/img/camisasunicas.jpg' %}" style="opacity: 65%;" height="600px" alt="camisasunicas">
+              <img class="bd-placeholder-img d-block w-100" src="{{ carousel.2.carrossel.url }}" style="opacity: 65%;" height="600px" alt="camisasunicas">
               <div class="container">
                 <div class="carousel-caption">
-                  <h1>Vários Modelos</h1>
-                  <p>Temos várias categorias e modelos de roupa para você experimentar!</p>
-                  <p><a class="btn btn-lg btn-primary" href="../produtos">Ver Produtos</a></p>
+                  <h1>{{carousel.2.title}}</h1>
+                  <p>{{carousel.2.description}}</p>
+                  <p><a class="btn btn-lg btn-primary" href="../produtos">{{carousel.2.buttom}}</a></p>
                 </div>
               </div>
             </div>
             <div class="carousel-item active">
-              <img class="bd-placeholder-img d-block w-100" src="{% static 'assets/img/kitconjunto.jpg' %}" style="opacity: 65%;" height="600px" alt="kitconjunto">
+              <img class="bd-placeholder-img d-block w-100" src="{{ carousel.1.carrossel.url }}" style="opacity: 65%;" height="600px" alt="kitconjunto">
               <div class="container">
                 <div class="carousel-caption text-end">
-                  <h1>Kits e Conjuntos</h1>
-                  <p>Vendemos também Kits ou Conjuntos especiais para o seu look fashion!</p>
-                  <p><a class="btn btn-lg btn-primary" href="../produtos">Ver Conjuntos</a></p>
+                  <h1>{{carousel.1.title}}</h1>
+                  <p>{{carousel.1.description}}</p>
+                  <p><a class="btn btn-lg btn-primary" href="../produtos">{{carousel.1.buttom}}</a></p>
                 </div>
               </div>
             </div>
@@ -134,7 +134,7 @@
             <a class="btn btn-lg btn-primary" href="#sobre">Saiba mais</a>
           </div>
           <div class="col-md-5">
-            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" src="{% static 'assets/img/loja.png' %}">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" src="{{ icons.0.icones.url }}">
           </div>
         </div>
       </div>
@@ -151,7 +151,7 @@
                     {% if x.path %}
                       <img src="{{ x.path.url }}" class="card-img-top" alt="...">
                     {% else %}
-                      <img src="{% static './assets/img/pacote.png' %}" class="card-img-top" alt="..." width="50px">
+                      <img src="{{ icons.1.icones.url }}" class="card-img-top" alt="..." width="50px">
                     {% endif %}
                     <div class="card-body">
                       <h5 class="card-title">{{x.nome_produto}} - <span style="color:green;font-family:Arial Black;">R${{x.preco_produto}}</span></h5>
@@ -171,7 +171,7 @@
                     {% if x.path %}
                       <img src="{{ x.path.url }}" class="card-img-top" alt="...">
                     {% else %}
-                      <img src="{% static './assets/img/pacote.png' %}" class="card-img-top" alt="..." width="50px">
+                      <img src="{{ icons.1.icones.url }}" class="card-img-top" alt="..." width="50px">
                     {% endif %}
                     <div class="card-body">
                       <h5 class="card-title">{{x.nome_produto}} - <span style="color:green;font-family:Arial Black;">R${{x.preco_produto}}</span></h5>
@@ -201,82 +201,32 @@
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="5000">
               <div class="row m-5 p-3">
+                {% for x in depoimentos %}
                 <div class="col-sm-6">
                   <div class="card mt-3">
                     <div class="card-body">
-                      <h5 class="card-title">Mauro Guimarães</h5>
-                      <p class="card-text">Já recomendei os produtos da TemplateShop para parentes e amigos. Os produtos com melhor custo beneficio que já usei</p>
-                      <footer class="blockquote-footer"><cite>23/02/2023</cite></footer>
+                      <h5 class="card-title">{{x.usuario}}</h5>
+                      <p class="card-text">{{x.depoimento}}</p>
+                      <footer class="blockquote-footer"><cite>{{x.date_create}}</cite></footer>
                     </div>
                  </div>
                 </div>
-                <div class="col-sm-6">
-                  <div class="card mt-3">
-                    <div class="card-body">
-                     <h5 class="card-title">Nathan Richard</h5>
-                     <p class="card-text">Os produtos são excelentes, o site é fácil de navegar e a entrega é rastreável e chega antes do prazo.</p>
-                     <footer class="blockquote-footer"><cite>03/03/2023</cite></footer>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="card mt-3">
-                    <div class="card-body">
-                     <h5 class="card-title">Laura Santos</h5>
-                     <p class="card-text">Eu amo a TemplateShop, sempre muito rápido o serviço e em poucos dias já recebo o produto na minha casa! Recomendo sempre!</p>
-                     <footer class="blockquote-footer"><cite>29/02/2023</cite></footer>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="card mt-3">
-                    <div class="card-body">
-                     <h5 class="card-title">Ryan Paulo</h5>
-                     <p class="card-text">Não posso falar muito pois sou iniciante no site, mas já vi que é muito bom.</p>
-                     <footer class="blockquote-footer"><cite>01/04/2023</cite></footer>
-                    </div>
-                  </div>
-                </div>
+                {% endfor %}
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="4000">
               <div class="row m-5 p-3">
+                {% for x in depoimentos %}
                 <div class="col-sm-6">
                   <div class="card mt-3">
                     <div class="card-body">
-                      <h5 class="card-title">Mauro Guimarães</h5>
-                      <p class="card-text">Já recomendei os produtos da TemplateShop para parentes e amigos. Os produtos com melhor custo beneficio que já usei</p>
-                      <footer class="blockquote-footer"><cite>23/02/2023</cite></footer>
+                      <h5 class="card-title">{{x.usuario}}</h5>
+                      <p class="card-text">{{x.depoimento}}</p>
+                      <footer class="blockquote-footer"><cite>{{x.date_create}}</cite></footer>
                     </div>
                  </div>
                 </div>
-                <div class="col-sm-6">
-                  <div class="card mt-3">
-                    <div class="card-body">
-                     <h5 class="card-title">Nathan Richard</h5>
-                     <p class="card-text">Os produtos são excelentes, o site é fácil de navegar e a entrega é rastreável e chega antes do prazo.</p>
-                     <footer class="blockquote-footer"><cite>03/03/2023</cite></footer>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="card mt-3">
-                    <div class="card-body">
-                     <h5 class="card-title">Laura Santos</h5>
-                     <p class="card-text">Eu amo a TemplateShop, sempre muito rápido o serviço e em poucos dias já recebo o produto na minha casa! Recomendo sempre!</p>
-                     <footer class="blockquote-footer"><cite>29/02/2023</cite></footer>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="card mt-3">
-                    <div class="card-body">
-                     <h5 class="card-title">Ryan Paulo</h5>
-                     <p class="card-text">Não posso falar muito pois sou iniciante no site, mas já vi que é muito bom.</p>
-                     <footer class="blockquote-footer"><cite>01/04/2023</cite></footer>
-                    </div>
-                  </div>
-                </div>
+                {% endfor %}
               </div>
             </div>
           </div>

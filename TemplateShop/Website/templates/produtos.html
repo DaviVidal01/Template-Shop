@@ -76,9 +76,9 @@
             </div>
           </div>
         </div>
-        <!--Produtos Promocionais-->
-        <div class="container pt-4 mt-3">
-          <h2 class="pb-2 border-bottom">Produtos Promocionais</h2>
+        <!--Categoria A-->
+        <div class="container pt-4 mt-4">
+          <h2 class="pb-2 border-bottom">Produtos Destaques</h2>
           <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="10000">
@@ -175,6 +175,62 @@
               <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <!--Produtos Promocionais-->
+        <div class="container pt-4 mt-3">
+          <h2 class="pb-2 border-bottom">Produtos Promocionais</h2>
+          <div id="carouselExampleIntervalPromo" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <div class="row align-items-start gap-3">
+                  {% for x in promo %}
+                  <div class="col">
+                    <div class="card">
+                      {% if x.path %}
+                        <img src="{{ x.path.url }}" class="card-img-top" alt="...">
+                      {% else %}
+                        <img src="{{ icons.1.icones.url }}" class="card-img-top" alt="..." width="50px">
+                      {% endif %}
+                      <div class="card-body">
+                        <h5 class="card-title">{{x.nome_produto}} - <span style="color:green;font-family:Arial Black;">R${{x.preco_produto}}</span></h5>
+                        <p class="card-text">{{x.description}}</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="5000">
+                <div class="row align-items-start gap-3">
+                  {% for x in promo %}
+                  <div class="col">
+                    <div class="card">
+                      {% if x.path %}
+                        <img src="{{ x.path.url }}" class="card-img-top" alt="...">
+                      {% else %}
+                        <img src="{{ icons.1.icones.url }}" class="card-img-top" alt="..." width="50px">
+                      {% endif %}
+                      <div class="card-body">
+                        <h5 class="card-title">{{x.nome_produto}} - <span style="color:green;font-family:Arial Black;">R${{x.preco_produto}}</span></h5>
+                        <p class="card-text">{{x.description}}</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIntervalPromo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIntervalPromo" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
@@ -183,206 +239,54 @@
         <!--Produtos Gerais-->
         <div class="container pt-4 mt-3">
           <h2 class="pb-2 border-bottom">Produtos Gerais</h2>
-          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselExampleIntervalGeral" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="10000">
                 <div class="row align-items-start gap-3">
+                  {% for x in casual %}
                   <div class="col">
                     <div class="card">
-                      <img src="{% static 'assets/img/camisaestampa.png' %}" class="card-img-top" alt="..." >
+                      {% if x.path %}
+                        <img src="{{ x.path.url }}" class="card-img-top" alt="...">
+                      {% else %}
+                        <img src="{{ icons.1.icones.url }}" class="card-img-top" alt="..." width="50px">
+                      {% endif %}
                       <div class="card-body">
-                        <h5 class="card-title">Camisa Estampa - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
+                        <h5 class="card-title">{{x.nome_produto}} - <span style="color:green;font-family:Arial Black;">R${{x.preco_produto}}</span></h5>
+                        <p class="card-text">{{x.description}}</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
                       </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisabranca.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Branca - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma linda camisa branca</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaosso.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Preta - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma bela camisa preta</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaazul.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Azul - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa azul com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
               <div class="carousel-item" data-bs-interval="5000">
                 <div class="row align-items-start gap-3">
+                  {% for x in social %}
                   <div class="col">
                     <div class="card">
-                      <img src="{% static 'assets/img/camisaestampa.png' %}" class="card-img-top" alt="..." >
+                      {% if x.path %}
+                        <img src="{{ x.path.url }}" class="card-img-top" alt="...">
+                      {% else %}
+                        <img src="{{ icons.1.icones.url }}" class="card-img-top" alt="..." width="50px">
+                      {% endif %}
                       <div class="card-body">
-                        <h5 class="card-title">Camisa Estampa - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
+                        <h5 class="card-title">{{x.nome_produto}} - <span style="color:green;font-family:Arial Black;">R${{x.preco_produto}}</span></h5>
+                        <p class="card-text">{{x.description}}</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
                       </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisabranca.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Branca - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma linda camisa branca</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaosso.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Preta - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma bela camisa preta</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaazul.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Azul - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa azul com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIntervalGeral" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-        <!--Categoria A-->
-        <div class="container pt-4 mt-3">
-          <h2 class="pb-2 border-bottom">Produtos Estampadas</h2>
-          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
-                <div class="row align-items-start gap-3">
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaestampa.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Estampa - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisabranca.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Branca - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma linda camisa branca</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaosso.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Preta - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma bela camisa preta</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaazul.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Azul - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa azul com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item" data-bs-interval="5000">
-                <div class="row align-items-start gap-3">
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaestampa.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Estampa - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisabranca.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Branca - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma linda camisa branca</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaosso.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Preta - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma bela camisa preta</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaazul.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Azul - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa azul com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIntervalGeral" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
@@ -391,102 +295,54 @@
         <!--Categoria B-->
         <div class="container pt-4 mt-3">
           <h2 class="pb-2 border-bottom">Produtos Sociais</h2>
-          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselExampleIntervalSocial" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="10000">
                 <div class="row align-items-start gap-3">
+                  {% for x in social %}
                   <div class="col">
                     <div class="card">
-                      <img src="{% static 'assets/img/camisaestampa.png' %}" class="card-img-top" alt="..." >
+                      {% if x.path %}
+                        <img src="{{ x.path.url }}" class="card-img-top" alt="...">
+                      {% else %}
+                        <img src="{{ icons.1.icones.url }}" class="card-img-top" alt="..." width="50px">
+                      {% endif %}
                       <div class="card-body">
-                        <h5 class="card-title">Camisa Estampa - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
+                        <h5 class="card-title">{{x.nome_produto}} - <span style="color:green;font-family:Arial Black;">R${{x.preco_produto}}</span></h5>
+                        <p class="card-text">{{x.description}}</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
                       </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisabranca.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Branca - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma linda camisa branca</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaosso.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Preta - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma bela camisa preta</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaazul.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Azul - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa azul com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
               <div class="carousel-item" data-bs-interval="5000">
                 <div class="row align-items-start gap-3">
+                  {% for x in social %}
                   <div class="col">
                     <div class="card">
-                      <img src="{% static 'assets/img/camisaestampa.png' %}" class="card-img-top" alt="..." >
+                      {% if x.path %}
+                        <img src="{{ x.path.url }}" class="card-img-top" alt="...">
+                      {% else %}
+                        <img src="{{ icons.1.icones.url }}" class="card-img-top" alt="..." width="50px">
+                      {% endif %}
                       <div class="card-body">
-                        <h5 class="card-title">Camisa Estampa - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
+                        <h5 class="card-title">{{x.nome_produto}} - <span style="color:green;font-family:Arial Black;">R${{x.preco_produto}}</span></h5>
+                        <p class="card-text">{{x.description}}</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
                       </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisabranca.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Branca - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma linda camisa branca</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaosso.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Preta - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma bela camisa preta</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaazul.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Azul - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa azul com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIntervalSocial" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIntervalSocial" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
@@ -495,102 +351,54 @@
         <!--Categoria C-->
         <div class="container pt-4 mt-3">
           <h2 class="pb-2 border-bottom">Produtos Casuais</h2>
-          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselExampleIntervalCasual" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="10000">
                 <div class="row align-items-start gap-3">
+                  {% for x in casual %}
                   <div class="col">
                     <div class="card">
-                      <img src="{% static 'assets/img/camisaestampa.png' %}" class="card-img-top" alt="..." >
+                      {% if x.path %}
+                        <img src="{{ x.path.url }}" class="card-img-top" alt="...">
+                      {% else %}
+                        <img src="{{ icons.1.icones.url }}" class="card-img-top" alt="..." width="50px">
+                      {% endif %}
                       <div class="card-body">
-                        <h5 class="card-title">Camisa Estampa - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
+                        <h5 class="card-title">{{x.nome_produto}} - <span style="color:green;font-family:Arial Black;">R${{x.preco_produto}}</span></h5>
+                        <p class="card-text">{{x.description}}</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
                       </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisabranca.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Branca - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma linda camisa branca</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaosso.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Preta - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma bela camisa preta</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaazul.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Azul - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa azul com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
               <div class="carousel-item" data-bs-interval="5000">
                 <div class="row align-items-start gap-3">
+                  {% for x in casual %}
                   <div class="col">
                     <div class="card">
-                      <img src="{% static 'assets/img/camisaestampa.png' %}" class="card-img-top" alt="..." >
+                      {% if x.path %}
+                        <img src="{{ x.path.url }}" class="card-img-top" alt="...">
+                      {% else %}
+                        <img src="{{ icons.1.icones.url }}" class="card-img-top" alt="..." width="50px">
+                      {% endif %}
                       <div class="card-body">
-                        <h5 class="card-title">Camisa Estampa - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
+                        <h5 class="card-title">{{x.nome_produto}} - <span style="color:green;font-family:Arial Black;">R${{x.preco_produto}}</span></h5>
+                        <p class="card-text">{{x.description}}</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
                         <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
                       </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisabranca.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Branca - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma linda camisa branca</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaosso.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Preta - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Uma bela camisa preta</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card">
-                      <img src="{% static 'assets/img/camisaazul.png' %}" class="card-img-top" alt="..." >
-                      <div class="card-body">
-                        <h5 class="card-title">Camisa Azul - <span style="color:green;font-family:Arial Black;">R$57,60</span></h5>
-                        <p class="card-text">Roupa azul com estampas.</p> <span class="badge text-bg-danger rounded-pill">PROMOÇÃO</span>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIntervalCasual" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIntervalCasual" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
